@@ -1,0 +1,120 @@
+:root{
+  --clr-lb : lightblue ;
+  --clr-lg : lightgray ;
+  --clr-lp : lightpink ; 
+  --clr-lsg : lightseagreen ;
+  --clr-bi : bisque ;
+  --clr-wh-s : whitesmoke ;
+  --clr-wh-b : #F9F6EE ;
+  --clr-wh-e : #F0EAD6 ;
+  --clr-b-d : rgb(14, 8, 49) ;
+  --w-100 : 100% ;
+  --fw-s : 400 ;
+  --fw-m : 600 ;
+  --fw-l : 800 ;
+  --fw-xl : 1000 ;
+}
+
+
+
+*{
+  padding: 0;
+  margin: 0;
+  font-family: Roboto ,Arial;
+}
+body{
+  background-color: var(--clr-b-d);
+  color: var(--clr-wh-s) ;
+}
+
+.container{
+  width: 100%;
+  height: 1000px;
+  display: flex ;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --------- header -------------  */
+
+.subject{
+ padding-top: 10%;
+ height: 20%;
+}
+
+.subject p {
+  font-size: 30px;
+  font-weight: var(--fw-xl);
+}
+
+/* ---------- main ------------- */
+
+main{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 70%;
+  column-gap: 50px;
+}
+
+/* ------------section------------- */
+
+section{
+  display: flex;
+  justify-content: center;  
+  width: 300px;
+  height: 500px;
+  background-color: gray ;
+  border-radius: 25px;
+  overflow: hidden;
+  
+}
+
+
+/* --------head of section 1 -----------  */
+
+.logo{
+  position: relative;
+}
+
+div img{
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  top: -20px;
+  right: -40px;
+  opacity: 0.2;
+}
+
+section div.head-of-card{
+  background: url(/Virtual-business-card/img/front-of-card.jpg);
+  width: 100%;
+  height: 30%;
+  z-index: 100;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding : 30px 20px 0 0
+}
+
+.head-of-card .text{
+ width: 100% ;
+ height: 40%;
+ color: var(--clr-lg);
+}
+
+.head-of-card p {
+ font-family:Verdana, Geneva, Tahoma, sans-serif;
+ font-size: 17px;
+}
+.head-of-card p:first-child{
+  font-weight: var(--fw-xl);
+}
+.head-of-card p:last-child{
+  padding-top: 5px;
+  font-size: 12px;
+  font-weight: var(--fw-s);
+}
+
+/* --------- circle-section-1 ----------*/
+
+
+
