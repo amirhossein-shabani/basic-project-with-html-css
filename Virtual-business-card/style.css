@@ -8,11 +8,15 @@
   --clr-wh-b : #F9F6EE ;
   --clr-wh-e : #F0EAD6 ;
   --clr-b-d : rgb(14, 8, 49) ;
+  --clr-cg : #007000 ;
+  --clr-dg : rgb(0, 56, 0) ;
+  --clr-sy : #ffca36 ;
   --w-100 : 100% ;
   --fw-s : 400 ;
   --fw-m : 600 ;
   --fw-l : 800 ;
   --fw-xl : 1000 ;
+  --ff-p : Verdana, Geneva, Tahoma, sans-serif;
 }
 
 
@@ -58,15 +62,43 @@ main{
 
 /* ------------section------------- */
 
-section{
+
+
+
+section , .section-1{
   display: flex;
   justify-content: center;  
   width: 300px;
   height: 500px;
-  background-color: gray ;
+  /* background-color: gray ; */
   border-radius: 25px;
   overflow: hidden;
-  
+  position: relative;
+  transform-style: preserve-3d;
+  animation: flip 1s  linear;
+  transition: width .30s , height .30s;
+}
+
+.section-2{
+  animation: flip 1s  linear 1s;
+  transition: width .30s , height .30s;
+}
+
+.section-1:hover , .section-2:hover{
+  width: 320px;
+  height: 520px;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
 }
 
 
@@ -92,7 +124,8 @@ section div.head-of-card{
   z-index: 100;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  padding : 30px 20px 0 0
+  padding : 30px 20px 0 0 ;
+  position: absolute;
 }
 
 .head-of-card .text{
@@ -102,7 +135,7 @@ section div.head-of-card{
 }
 
 .head-of-card p {
- font-family:Verdana, Geneva, Tahoma, sans-serif;
+ font-family:var(--ff-p);
  font-size: 17px;
 }
 .head-of-card p:first-child{
@@ -115,6 +148,169 @@ section div.head-of-card{
 }
 
 /* --------- circle-section-1 ----------*/
+
+.circle-section-1{
+  width: 170px;
+  height: 170px;
+  background-color: black;
+  position: absolute;
+  top: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 6px solid var(--clr-cg) ;
+  z-index: 100;
+}
+
+
+.circle-section-1 i{
+  font-size: 100px;
+  color: var(--clr-cg);
+}
+
+/* -------------footer-section-1---------- */
+
+.footer-section-1{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: var(--clr-cg);
+}
+
+.footer-section-1 .name {
+  width: 240px;
+  height: 50px;
+  position: absolute;
+  z-index: 101;
+  top: 58%;
+  left: 18% ;
+  font-family: Roboto , Arial;
+  font-weight: var(--fw-xl);
+  font-size: 20px;
+  color: var(--clr-dg);
+}
+
+/* ----------footer-section-1-----personal-info-------- */
+
+.personal-info-container{
+  /* background-color: gray; */
+  height: 29%;
+  position: absolute;
+  bottom: 15px;
+  right: 5px;
+  left: 5px;
+  display: grid;
+  grid-template-columns: 50px 1fr;
+
+}
+.personal-info-container .box {
+   border: 1px solid black;
+  /* grid-template-rows: 1fr 1fr 1fr ; */
+}
+.personal-info-container .box.icon-boxes {
+  
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 5px;
+  border: none;
+}
+.personal-info-container .box.icon-boxes .icon-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: var(--clr-dg);
+}
+.personal-info-container .box.info-boxes {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 5px;
+  border: none;
+  
+} 
+.personal-info-container .box.info-boxes .text-section{
+  display: flex;
+  align-items: center;
+  color: var(--clr-dg);
+  font-weight: var(--fw-l);
+}
+
+
+/* --------------------section-2 ------  */
+
+.section-2{
+  position: relative;
+  border: 5px solid var(--clr-cg);
+}
+.section-2 .top-section-2{
+  position: absolute;
+  width: 100%;
+  height: 70%;
+  background: url(/Virtual-business-card/img/back-of-card.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+
+/* -------------circle-section-2 ---------- */
+
+.circle-section-2{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color:  var(--clr-cg);
+  border: 6px solid  var(--clr-cg);
+  bottom: 17%;
+  z-index: 101;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+  border-radius: 50%;
+  color: black;
+}
+
+
+/* ---------bottom-section-2------------ */
+
+.section-2 .bottom-section-2{
+  position: absolute ;
+  width: 100%;
+  height: 30%;
+  background-color: var(--clr-cg);
+  bottom: 0;
+  /* box-shadow: inset 0 15px 9px rgb(0, 0, 0) ; */
+  z-index: 100;
+}
+
+.bottom-section-2 p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: -15px;
+  font-size: 20px;
+  font-weight: var(--fw-l);
+  color: var(--clr-dg);
+  transition: font-size .30s;
+}
+
+
+.bottom-section-2 a{
+  text-decoration: none;
+}
+.bottom-section-2 p:hover {
+  font-size: 30px;
+}
+
+
+
+
+
 
 
 
