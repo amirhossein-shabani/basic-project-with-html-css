@@ -1,0 +1,56 @@
+/* استایل کلی برای صفحه */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #1e1e2f;
+  font-family: Arial, sans-serif;
+}
+
+/* ظرف کارت */
+.card-container {
+  perspective: 700px; /* برای ایجاد عمق سه‌بعدی */
+}
+
+/* کارت */
+.card {
+  width: 200px;
+  height: 300px;
+  position: relative;
+  transform-style: preserve-3d; /* فعال‌سازی فضای سه‌بعدی */
+  transition: transform 0.8s; /* انیمیشن نرم */
+  cursor: pointer;
+}
+
+/* تغییر حالت کارت هنگام hover */
+.card-container:hover .card {
+  transform: rotateY(180deg); /* چرخش 180 درجه‌ای */
+}
+
+/* سمت‌های کارت */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* پنهان کردن پشت کارت */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+/* سمت جلوی کارت */
+.card-front {
+  background-color: #4caf50; /* رنگ سبز */
+}
+
+/* سمت پشت کارت */
+.card-back {
+  background-color: #f44336; /* رنگ قرمز */
+  transform: rotateY(180deg); /* چرخاندن پشت کارت */
+}
