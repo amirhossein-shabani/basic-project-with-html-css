@@ -1,3 +1,20 @@
+:root{
+  --clr-lb : lightblue ;
+  --clr-lg : lightgray ;
+  --clr-lp : lightpink ; 
+  --clr-lsg : lightseagreen ;
+  --clr-bi : bisque ;
+  --clr-wh-s : whitesmoke ;
+  --clr-wh-b : #F9F6EE ;
+  --clr-wh-e : #F0EAD6 ;
+  --clr-b-d : rgb(14, 8, 49) ;
+  --w-100 : 100% ;
+  --fw-s : 400 ;
+  --fw-m : 600 ;
+  --fw-l : 800 ;
+  --fw-xl : 1000 ;
+}
+
 
 
 

@@ -24,10 +24,6 @@ body {
   cursor: pointer;
 }
 
-/* تغییر حالت کارت هنگام hover */
-.card-container:hover .card {
-  transform: rotateY(180deg); /* چرخش 180 درجه‌ای */
-}
 
 /* سمت‌های کارت */
 .card-front,
@@ -53,4 +49,9 @@ body {
 .card-back {
   background-color: #f44336; /* رنگ قرمز */
   transform: rotateY(180deg); /* چرخاندن پشت کارت */
+}
+
+/* تغییر حالت کارت هنگام hover */
+.card-container:hover .card {
+  transform: rotateY(180deg); /* چرخش 180 درجه‌ای */
 }
