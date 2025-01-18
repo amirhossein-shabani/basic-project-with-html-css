@@ -97,6 +97,9 @@ main {
   grid-template-columns: 1fr 30%;
   grid-template-rows: 1fr;
 }
+.overlay{
+  display: none;
+}
 
 /* -----section---- */
 section {
@@ -116,8 +119,9 @@ section {
   margin-left: 4%;
   background-color: rgb(0, 86, 172);
   transform: translateX(-150%);
-  animation: box-1 1.7s forwards;
+  animation: box-1 1.3s forwards;
   border-radius: 10px;
+  box-shadow: inset 1px 2px 10px darkblue;
 }
 .section-1 .box-1 .h1-text {
   padding: 2%;
@@ -135,7 +139,116 @@ section {
   }
 }
 
+.section-1 .box-2 {
+  margin-top: 3%;
+  width: 80%;
+  height: 80%;
+  margin-left: 4%;
+  background-color: rgb(0, 86, 172);
+  border-radius: 10px;
+  box-shadow: inset 1px 2px 10px darkblue;
+  transition: height 0.4s, width 0.4s;
+  transform: translateX(-150%);
+  animation: box-2 1.4s forwards;
+}
+.section-1 .box-2 .des-text {
+  padding: 2%;
+  font-size: 25px;
+  color: rgb(228, 227, 227);
+  transition: font-size 0.4s, color 0.4s;
+}
+.box-2:hover .des-text {
+  font-size: 27px;
+  color: white;
+}
+.box-2:hover {
+  width: 85%;
+  height: 85%;
+}
+
+@keyframes box-2 {
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* ----------section-2------ */
+
 .section-2 {
+  display: grid;
+  grid-template-columns: 50%;
+  grid-template-rows: 30% 1fr;
+}
+.section-2 .box-1 {
+  width: 100%;
+  margin-left: 8%;
+  margin-top: 7%;
+  height: 100;
+  background-color: rgb(0, 150, 180);
+  border-radius: 10px;
+  transform: translateX(-150%);
+  animation: sec2-box-1 1.5s forwards;
+  box-shadow: inset 1px 2px 7px rgb(0, 79, 95);
+  transition: width 0.4s;
+}
+.section-2 .box-1 .text {
+  padding: 3%;
+  color: white;
+  font-size: 20px;
+  font-weight: 800;
+  transition: font-size 0.4s;
+}
+.section-2 .box-1:hover {
+  width: 110%;
+}
+.section-2 .box-1:hover .text {
+  font-size: 22px;
+}
+
+@keyframes sec2-box-1 {
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.section-2 .btn {
+  width: 25%;
+  height: 25%;
+  margin-left: 8%;
+  margin-top: 5%;
+  transform: translateX(-100vh);
+  animation: btn 1.5s forwards;
+  transition: width 0.4s, height 0.4s;
+}
+
+.section-2 .btn button {
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(2, 177, 119);
+  border: none;
+  border-radius: 10px;
+  font-size: 25px;
+  font-weight: 900;
+  color: white;
+  box-shadow: inset 1px 2px 7px rgb(0, 73, 49);
+  transition: font-size 0.4s;
+}
+
+@keyframes btn {
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.section-2 .btn:hover {
+  width: 30%;
+  height: 30%;
+}
+.section-2 .btn:hover button {
+  font-size: 35px;
 }
 
 /* ---------aside-------- */
@@ -149,7 +262,8 @@ aside {
   align-items: center;
   justify-content: center;
   position: absolute;
-  right: -200%;
+  right: 0;
+  transform: translateX(150%);
   animation: background-picture 1.5s forwards;
 }
 .background-picture img {
@@ -158,21 +272,20 @@ aside {
 }
 @keyframes background-picture {
   100% {
-    right: 0;
+    transform: translateX(0);
   }
 }
 
 /* --------footer------- */
 
 footer {
+  position: fixed;
   width: 100%;
   height: 10%;
-  background-color: gray;
+  background-color: darkblue;
 }
 
 /* -------------media Queris -----------------  */
-
-
 
 @media (min-width: 1200px) and (max-width: 1440px) {
   /* ---header---- */
@@ -192,6 +305,27 @@ footer {
   }
   .box-1:hover .h1-text {
     font-size: 42px;
+  }
+
+  /* -----------section-1-box-2------ */
+
+  .section-1 .box-2 {
+    width: 80%;
+    height: 85%;
+    transition: height 0.4s, width 0.4s;
+  }
+  .section-1 .box-2 .des-text {
+    font-size: 23px;
+    font-weight: 700;
+    color: whitesmoke;
+  }
+  .box-2:hover {
+    height: 90%;
+    width: 85%;
+  }
+  .box-2:hover .des-text {
+    font-size: 25px;
+    color: white;
   }
 }
 
@@ -220,6 +354,44 @@ footer {
   }
   .box-1:hover .h1-text {
     font-size: 32px;
+  }
+  /* ---------section-1-box-2-------- */
+
+  .section-1 .box-2 {
+    position: relative;
+    top: -25%;
+    width: 80%;
+    height: 80%;
+    transition: height 0.6s;
+  }
+  .section-1 .box-2 .des-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: whitesmoke;
+  }
+  .box-2:hover {
+    height: 85%;
+  }
+  .box-2:hover .des-text {
+    font-size: 22px;
+    color: white;
+  }
+  .section-2 .box-1 {
+    margin-top: -10%;
+    width: 110%;
+    height: 70%;
+  }
+  .section-2 .box-1:hover {
+    width: 130%;
+  }
+  .section-2 .btn {
+    margin-top: -10%;
+    width: 35%;
+    height: 30%;
+  }
+  .section-2 .btn:hover {
+    width: 43%;
+    height: 35%;
   }
 }
 
@@ -320,10 +492,23 @@ footer {
   main {
     position: relative;
     grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     background: url(/landing-page-project/img/imgbin_globe-website-wireframe-sphere-wire-frame-model-png.png);
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
+    
+  }
+
+  /* --------overlay-------- */
+  .overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(47, 79, 207, 0.2); 
   }
 
   /* ----aside-background-picture--------- */
@@ -332,22 +517,93 @@ footer {
     display: none;
   }
 
-  /* --------box-1-------- */
+  /* ------- .section-1-------- */
+  .section-1 {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+  /* --------section-1-box-1-------- */
   .section-1 .box-1 {
     width: 90%;
     display: flex;
     align-items: center;
     height: 50%;
+    animation-timing-function: 1s;
   }
   .section-1 .box-1 .h1-text {
     font-size: 22px;
+    color: white;
   }
-  .box-1:hover .h1-text {
-    font-size: 25px;
+
+  /* ---------section-1-box-2-------- */
+
+  .section-1 .box-2 {
+    position: relative;
+    top: -25%;
+    width: 90%;
+    height: 90%;
+    transition: height 0.6s;
+    transform: translateX(150%);
+    animation: box-2 1s forwards;
+  }
+  .section-1 .box-2 .des-text {
+    font-size: 21px;
+    font-weight: 700;
+    color: whitesmoke;
+  }
+
+  /* ---------section-2-box-1 & btn --- */
+
+  .section-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: center !important;
+    width: 80%;
+    margin-top: -30%;
+  }
+  .section-2 .box-1 {
+    width: 100%;
+    height: 12%;
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+  }
+  .section-2 .box-1 .text {
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .section-2 .box-1:hover {
+    width: 100%;
+  }
+  .section-2 .box-1:hover .text {
+    font-size: 15px;
+  }
+  .section-2 .btn {
+    width: 45%;
+    height: 15%;
+    margin-left: 38%;
+    margin-top: 10%;
+    transform: translateX(100vh) ;
+    animation-timing-function: 1s;
+  }
+
+  .section-2 .btn:hover {
+    width: 45%;
+    height: 15%;
+  }
+  .section-2 .btn button {
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+  }
+  .section-2 .btn:hover button {
+    font-size: 35px;
   }
 }
 
-/* ----------------- */
+/* -----------------small-phone-------- */
 
 @media (min-width: 360px) and (max-width: 480px) {
   /* ----header---- */
@@ -455,6 +711,18 @@ footer {
     background-repeat: no-repeat;
   }
 
+    /* --------overlay-------- */
+    .overlay {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(47, 79, 207, 0.2); 
+    }
+  
+
   /* ----aside-background-picture--------- */
 
   aside {
@@ -464,15 +732,81 @@ footer {
   /* -----box-1------- */
 
   .section-1 .box-1 {
+    width: 90%;
     margin-top: 10%;
     height: 40%;
+    animation-timing-function: 1s;
   }
   .section-1 .box-1 .h1-text {
     padding-top: 2.5%;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 700;
   }
-  .box-1:hover .h1-text {
+  /* ---------section-1-box-2-------- */
+
+  .section-1 .box-2 {
+    position: relative;
+    top: -25%;
+    width: 90%;
+    height: 100%;
+    transition: height 0.6s;
+    transform: translateX(150%);
+    animation: box-2 1s forwards;
+  }
+  .section-1 .box-2 .des-text {
+    font-size: 22px;
+    font-weight: 400;
+    color: whitesmoke;
+  }
+  /* ---------section-2-box-1 & btn --- */
+
+  .section-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: center !important;
+    width: 80%;
+    margin-top: -40%;
+  }
+  .section-2 .box-1 {
+    width: 100%;
+    height: 12%;
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+  }
+  .section-2 .box-1 .text {
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .section-2 .box-1:hover {
+    width: 100%;
+  }
+  .section-2 .box-1:hover .text {
     font-size: 15px;
   }
+  .section-2 .btn {
+    width: 45%;
+    height: 15%;
+    margin-left: 38%;
+    margin-top: 10%;
+    transform: translateX(100vh) ;
+    animation-timing-function: 1s;
+  }
+
+  .section-2 .btn:hover {
+    width: 30%;
+    height: 15%;
+  }
+  .section-2 .btn button {
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+  }
+  .section-2 .btn:hover button {
+    font-size: 25px;
+  }
+
+
 }
