@@ -1,4 +1,17 @@
-const counDate = new Date("Jan 1, 2025 00:00:00").getTime();
+
+const nBox = document.querySelector('.n-box');
+const newsletter = document.querySelector('.newsletter');
+const section = document.querySelector('.sec')
+const closeI = document.querySelector('.close');
+const dayH = document.getElementById("day");
+const hourH = document.getElementById('hour');
+const minuteH = document.getElementById('minute');
+const secondH = document.getElementById('second');
+const counDate = new Date("Jan 1, 2026 00:00:00").getTime();
+
+
+// --- creat-timmer --- 
+
 
 function newYear(){
   const now = new Date().getTime();
@@ -13,16 +26,20 @@ function newYear(){
   const h = Math.floor((gap % (day)) / (hour));
   const m = Math.floor((gap % (hour)) / (minute));
   const s = Math.floor((gap % (minute)) / (second));
+
+  dayH.innerHTML = d ;
+  hourH.innerHTML = h ;
+  minuteH.innerHTML = m ;
+  secondH.innerHTML = s  ;
+
 }
 
 setInterval(function(){
   newYear()
 },1000) ; 
 
-const nBox = document.querySelector('.n-box');
-const newsletter = document.querySelector('.newsletter');
-const section = document.querySelector('.sec')
 
+// -----newsletter-box-controll -------- 
 
 
 nBox.addEventListener('click' , (event)=>{
@@ -37,7 +54,13 @@ section.addEventListener('click', (event)=>{
   }
 })
 
+closeI.addEventListener('click' , (e)=>{
+  newsletter.classList.remove('active');
+}) 
+
+
 nBox.addEventListener('click' , (event)=>{
   event.stopPropagation();
 })
+
 
